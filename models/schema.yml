@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    database: lewagon-486409
+    schema: gz_raw_data
+    loader: bigquery
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: "Ventes brutes"
+      - name: product
+        identifier: raw_gz_product
+        description: "Produits"
+      - name: ship
+        identifier: raw_gz_ship
+        description: "Expéditions"
