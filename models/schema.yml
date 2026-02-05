@@ -45,51 +45,58 @@ sources:
         identifier: raw_gz_adwords
         description: "Ads adwords"
         columns:
-          - name: date_date
-          - name: paid_source
-          - name: campaign_key
-          - name: camPGN_name
-          - name: ads_cost
-          - name: impression
-          - name: click
-            tests:
-              - not_null
+         - name: date_date
+         - name: paid_source
+         - name: campaign_key
+         - name: camPGN_name
+         - name: ads_cost
+         - name: impression
+         - name: click
       - name: bing
         identifier: raw_gz_bing
         description: "source bing"
         columns:
-          - name: date_date
-          - name: paid_source
-          - name: campaign_key
-          - name: camPGN_name
-          - name: ads_cost
-          - name: impression
-          - name: click
-            tests:
-              - not_null
+         - name: date_date
+         - name: paid_source
+         - name: campaign_key
+         - name: camPGN_name
+         - name: ads_cost
+         - name: impression
+         - name: click
       - name: criteo
         identifier: raw_gz_criteo
         description: "source bing"
         columns:
-          - name: date_date
-          - name: paid_source
-          - name: campaign_key
-          - name: camPGN_name
-          - name: ads_cost
-          - name: impression
-          - name: click
-            tests:
-              - not_null
+         - name: date_date
+         - name: paid_source
+         - name: campaign_key
+         - name: camPGN_name
+         - name: ads_cost
+         - name: impression
+         - name: click
       - name: facebook
         identifier: raw_gz_facebook
         description: "source bing"
         columns:
-          - name: date_date
-          - name: paid_source
-          - name: campaign_key
-          - name: camPGN_name
-          - name: ads_cost
-          - name: impression
-          - name: click
-            tests:
-              - not_null
+         - name: date_date
+         - name: paid_source
+         - name: campaign_key
+         - name: camPGN_name
+         - name: ads_cost
+         - name: impression
+         - name: click
+models:
+  - name: int_campaigns
+    columns:
+     - name: date_date
+     - name: paid_source
+     - name: campaign_key
+     - name: campaign_name
+     - name: ads_cost
+     - name: impression
+     - name: click
+    tests:
+    - unique:
+        column_name: "(date_date || '-' || campaign_key)"
+    - not_null:
+        column_name: "(date_date || '-' || campaign_key)"
