@@ -40,5 +40,4 @@ models:
     # Applies to all files under models/mart/
     mart:
       +materialized: table
-    finance:
       +schema: finance
